@@ -1,0 +1,39 @@
+<app-header header="Add Employee Details"></app-header>
+<div class="form-group form">
+  <form [formGroup]="employeeForm">
+    <div class="row position-relative">
+      <mat-icon svgIcon="user-icon"></mat-icon>
+      <input formControlName="name" matInput type="text" />
+    </div>
+    <div class="row position-relative">
+      <mat-icon svgIcon="user-icon"></mat-icon>
+      <select formControlName="role">
+        <option>Flutter Developer</option>
+        <option>Web Developer</option>
+      </select>
+    </div>
+    <div class="row position-relative">
+      <mat-icon svgIcon="user-icon"></mat-icon>
+      <input
+        formControlName="dateFrom"
+        [matDatepicker]="picker"
+        (focus)="picker.open()"
+        readonly
+      />
+      <mat-datepicker #picker [calendarHeaderComponent]="customHeader"
+        ><mat-datepicker-actions class=""
+          ><button title="Save" (click)="noDate('dateFrom')" class="btn button" matDateRangePickerApply>
+            No Date
+          </button>
+          <button title="Save" class="btn button" matDateRangePickerApply>
+            Save
+          </button>
+        </mat-datepicker-actions></mat-datepicker
+      >
+    </div>
+
+    <div class="footer">
+      <button [disabled]="employeeForm.invalid" (click)="addEmployee()">Save</button>
+    </div>
+  </form>
+</div>

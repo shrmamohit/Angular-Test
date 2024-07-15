@@ -1,0 +1,42 @@
+.employee-list {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  .title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+    text-align: left;
+    color: #1da1f2;
+  }
+
+  .employee {
+    display: inline-grid;
+    width: 100%;
+    margin-bottom: 1rem;
+    label {
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 20px;
+      text-align: left;
+      color: #323238;
+      margin-bottom: 0.5rem;
+    }
+    span {
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+      color: #949c9e;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.emp-footer {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}

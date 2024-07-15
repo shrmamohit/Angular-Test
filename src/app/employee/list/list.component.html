@@ -1,0 +1,46 @@
+<app-header header="Employee List"></app-header>
+<div class="employee-list">
+  <div class="row">
+    <div>
+      <div class="row">
+        <h2 class="title">Current Employee</h2>
+      </div>
+
+      <div class="row">
+        <div class="current-employees">
+          @for( employee of currentemployee; track employee.id){
+          <div class="employee">
+            <label>{{ employee.name }}</label>
+            <span>{{ employee.role }}</span>
+            <span>From {{ employee.dateFrom | date : "d MMM, y" }} </span>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- prevous employee  -->
+  <div class="row">
+    <div>
+      <div class="row">
+        <h2 class="title">Previous employees</h2>
+      </div>
+
+      <div class="row">
+        <div class="current-employees">
+          @for(prevEmp of prevemployee; track prevEmp.id){
+          <div class="employee">
+            <label>{{ prevEmp.name }}</label>
+            <span>{{ prevEmp.role }}</span>
+            <span>{{ prevEmp.dateFrom | date : "d MMM, y" }} - {{ prevEmp.dateTo | date : "d MMM, y" }}</span>
+          </div>
+          } 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="emp-footer">
+  <img (click)="addEmp()" src="assets/images/add-employee.svg" />
+</div>
